@@ -66,4 +66,7 @@ Again probably not the most secure but this should get you going.
 ## Example
 
 ## Licensing 
-This project is released under GPLv3 license. Please see the included License file for more information. 
+
+This project is released under GPLv3 license. Please see the included License file for more information.
+
+Copyright © 2017 - Arwin Reprakash | ITHITMAN.com
