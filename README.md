@@ -31,7 +31,7 @@ This is a plain vanilla installation of postgres on fedora. Fine tuning postgres
 
 `# su systemctl enable postgresql.service`
 
-## Table Creation
+### Table Creation
 
 `# su postgres`
 
@@ -47,7 +47,7 @@ This is a plain vanilla installation of postgres on fedora. Fine tuning postgres
 `comments char(1000)` <br />
 `);` <br />
 
-## Inserting Devices into the Table
+### Inserting Devices into the Table
 
 `psql -h localhost -U cisco postgres` 
 
@@ -61,9 +61,11 @@ host    all             all             ::1/128                 trust
 ```
 Again probably not the most secure but this should get you going. 
 
-## Editing Variables in the cisco_stats_collector.py
+### Editing Variables in the cisco_stats_collector.py
 
 ## Example
+
+After you follow the install instructions this is how to execute the script. 
 
 ## Licensing 
 
