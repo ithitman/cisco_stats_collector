@@ -8,6 +8,7 @@
 - [Summary](#summary)
 - [Install Instructions](#install-instructions)
 	- [Overview](#overview)
+	- [Python Packages](#python-packages)
 	- [Postgres Installation](#postgres-installation)
 	- [Table Creation](#table-creation)
 	- [Inserting Devices into the Table](#inserting-devices-into-the-table)
@@ -24,6 +25,10 @@ Simple python script to collect stats from Cisco devices using SSH. Read from a 
 - We will create a table that will house our devices and information regarding each device.
 - We will create a table that will house our results from the devices. 
 - We will edit some key variables that are required by script.
+
+### Python Packages
+
+`su dnf install python-psycopg2 python-paramiko`
 
 ### Postgres Installation
 
