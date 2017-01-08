@@ -6,8 +6,14 @@
 ## Table of contents
 
 - [Summary](#summary)
-- [Install Instructions](#install-instructions)
-- [Licensing](#licensing)
+- [Install Instructions](#install instructions)
+	- [Overview](#overview)
+	- [Postgres Installation](#postgres-installation)
+	- [Table Creation](#table-creation)
+	- [Inserting Devices into the Table](#inserting-devices)
+	- [Editing Variables in the cisco_stats_collector.py](#editing-variables)
+- [Example](#example)
+- [License](#license)
 
 ## Summary
 Simple python script to collect stats from Cisco devices using SSH. Read from a database for the hostnames of the Cisco devices and parallel process multiple devices at the same time and input the results into a database back-end.
