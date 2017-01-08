@@ -46,12 +46,12 @@ This is a plain vanilla installation of postgres on fedora. Fine tuning postgres
 `postgres=# CREATE ROLE cisco WITH SUPERUSER LOGIN PASSWORD 'cisco';`
 
 `postgres=# create table cisco_stats_collector (`<br />
-`ID SERIAL PRIMARY KEY NOT NULL,` <br />
-`hostname char(100),` <br />
-`username char(100),` <br />
-`password char(100),` <br />
-`comments char(1000)` <br />
-`);` <br />
+`	ID SERIAL PRIMARY KEY NOT NULL,` <br />
+`	hostname char(100),` <br />
+`	username char(100),` <br />
+`	password char(100),` <br />
+`	comments char(1000)` <br />
+`	);` <br />
 
 ### Inserting Devices into the Table
 
