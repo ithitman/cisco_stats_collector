@@ -67,7 +67,7 @@ host    all             all             ::1/128                 trust
 ```
 Again probably not the most secure but this should get you going. 
 
-### Editing Variables in the cisco_stats_collector.py
+### Editing Script Variables
 
 ## Example
 
