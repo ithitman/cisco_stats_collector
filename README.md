@@ -6,14 +6,14 @@
 ## Table of contents
 
 - [Summary](#summary)
-- [Install Instructions](#)
-	- [Overview](#)
-	- [Postgres Installation](#)
-	- [Table Creation](#)
-	- [Inserting Devices into the Table](#)
-	- [Editing Script Variables](#)
-- [Example](#)
-- [License](#)
+- [Install Instructions](#Install-Instructions)
+	- [Overview](#Overview)
+	- [Postgres Installation](#Postgres-Installation)
+	- [Table Creation](#Table-Creation)
+	- [Inserting Devices into the Table](#Inserting-Devices-into-the-Table)
+	- [Editing Script Variables](#Editing-Script-Variables)
+- [Example](#Example)
+- [License](#License)
 
 ## Summary
 Simple python script to collect stats from Cisco devices using SSH. Read from a database for the hostnames of the Cisco devices and parallel process multiple devices at the same time and input the results into a database back-end.
