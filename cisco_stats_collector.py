@@ -107,9 +107,15 @@ def main():
         pass_args = "hostname:{} username:{} password:{} ".format(hostname, username, password)
         cisco_queue.put(pass_args)
 
+    """
+    Instead of connecting to a database to populate the list of devices you can also have a list of devices in a txt
+    file and load it into the queue using a for or while loop if that is easier.
+    """
+
     # Wait till all threads to be completed before exiting
     cisco_queue.join()
     print('Entire job timespan:', time.time() - start_time)
+
 
 
 if __name__ == "__main__":
