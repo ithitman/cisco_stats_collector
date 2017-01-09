@@ -28,7 +28,7 @@ Simple python script to collect stats from Cisco devices using SSH. Read from a 
 
 ### Python Packages
 
-`su dnf install python-psycopg2 python-paramiko`
+`su dnf install python2 python-psycopg2 python-paramiko`
 
 ### Postgres Installation
 
@@ -61,6 +61,8 @@ This is a plain vanilla installation of postgres on fedora. Fine tuning postgres
 ### Inserting Devices into the Table
 
 `psql -h localhost -U cisco postgres` 
+
+This is just an example, put the appropriate router names, username and password. 
 
 `postgres=# INSERT INTO cisco_stats_collector (hostname,username,password,comments) VALUES ('arwin-router-1','user','pass','Cisco Nexus 3548');`
 
