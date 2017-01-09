@@ -18,13 +18,12 @@
 - [License](#license)
 
 ## Summary
-Simple python script to collect stats from Cisco devices using SSH. Read from a database for the hostnames of the Cisco devices and parallel process multiple devices at the same time and input the results into a database back-end.
+Simple python script to collect stats from devices using SSH. Read from a database for the hostnames of the devices and parallel process multiple devices at the same time and display the results. Since the script is using SSH and paramiko you can actually use it for any device that supports SSH. 
 
 ## Install Instructions
 ### Overview
 - We will install a database backend (postgres in this instruction).
 - We will create a table that will house our devices and information regarding each device.
-- We will create a table that will house our results from the devices. 
 - We will edit some key variables that are required by script.
 
 ### Python Packages
@@ -76,6 +75,13 @@ host    all             all             ::1/128                 trust
 Again probably not the most secure but this should get you going. 
 
 ### Editing Script Variables
+```
+num_of_parallel_jobs = 10 # number of concurrent threads 
+sql_username = 'cisco' # username to log into the database 
+sql_password = 'cisco' # password to log into the database 
+sql_database = 'postgres' # name of the database
+sql_host = 'localhost' # location of the database
+```
 
 ## Example
 
@@ -95,7 +101,7 @@ postgres=# select count(*) from cisco_stats_collector;
 ```
 
 * I set the variable 'num_of_parallel_jobs = 1' inside the script and the job took approximately 18 seconds to finish for 6 devices. 
-* I set the variable 'num_of_parallel_jobs = 6' inside the script and the job took approximately 04 seconds to finish for 6 devices. This is the power of parallel processing multiple devices. 
+* I set the variable 'num_of_parallel_jobs = 6' inside the script and the job took approximately 04 seconds to finish for 6 devices. 
 
 ## License
 
