@@ -101,7 +101,7 @@ def main():
         pass_args = "hostname:{} username:{} password:{} ".format(hostname, username, password)
         cisco_queue.put(pass_args)
 
-    # Wait till all jobs are completed before exiting
+    # Wait till all threads to be completed before exiting
     cisco_queue.join()
     print('Entire job timespan:', time.time() - start_time)
 
