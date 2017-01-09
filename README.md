@@ -78,7 +78,23 @@ Again probably not the most secure but this should get you going.
 
 ## Example
 
-After you follow the install instructions this is how to execute the script. 
+After you followed the install instructions this is how to execute the script. 
+
+./cisco_stats_collector.py 
+
+## Benchmark 
+
+I have 6 devices in my database table. 
+```
+postgres=# select count(*) from cisco_stats_collector; 
+ count 
+-------
+     6
+(1 row)
+```
+
+* I set the variable 'num_of_parallel_jobs = 1' inside the script and the job took approximately 18 seconds to finish for 6 devices. 
+* I set the variable 'num_of_parallel_jobs = 6' inside the script and the job took approximately 04 seconds to finish for 6 devices. This is the power of parallel processing multiple devices. 
 
 ## License
 
