@@ -14,6 +14,7 @@
 	- [Inserting Devices into the Table](#inserting-devices-into-the-table)
 	- [Editing Script Variables](#editing-script-variables)
 - [Example](#example)
+- [Benchmark](#benchmark)
 - [License](#license)
 
 ## Summary
