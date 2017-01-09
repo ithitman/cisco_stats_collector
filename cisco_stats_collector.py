@@ -117,6 +117,5 @@ def main():
     print('Entire job timespan:', time.time() - start_time)
 
 
-
 if __name__ == "__main__":
     main()
