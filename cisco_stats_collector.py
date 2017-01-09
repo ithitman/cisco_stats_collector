@@ -15,8 +15,13 @@ from Queue import Queue
 import time
 import re
 
+
 # Define variables
 num_of_parallel_jobs = 10
+sql_username = 'cisco'
+sql_password = 'cisco'
+sql_database = 'postgres'
+sql_host = 'localhost'
 
 
 def cisco_stats_collection(cisco_devices):
@@ -87,7 +92,7 @@ for x in range(num_of_parallel_jobs):
 
 def main():
     # Connect to the database
-    get_devices = psycopg2.connect(database='postgres', user='cisco', password='cisco', host='localhost')
+    get_devices = psycopg2.connect(host=sql_host, database=sql_database, user=sql_username, password=sql_password)
     # Set autocommit 
     get_devices.autocommit = True
     cursor = get_devices.cursor()
