@@ -24,6 +24,7 @@ sql_database = 'postgres'
 sql_host = 'localhost'
 
 
+# Function to collect the stats and print
 def cisco_stats_collection(cisco_devices):
     cisco_command = "show interface status"
     try:
@@ -40,21 +41,24 @@ def cisco_stats_collection(cisco_devices):
         return
 
     try:
+        # Connect to the device
         ssh_connection = paramiko.SSHClient()
         ssh_connection.set_missing_host_key_policy(paramiko.AutoAddPolicy())
         ssh_connection.connect(hostname, username=username, password=password, timeout=10)
         stdin, stdout, stderr = ssh_connection.exec_command(cisco_command)
         stdin.flush()
+        # Get the output from the switch
         ssh_connection_output = stdout.readlines()
+        # For each line in the output loop through and parse the data
         for each_line in ssh_connection_output:
             single_row = re.split('\s+', each_line)
             if single_row:
-                # if the line begins with a letter
+                # If the line begins with a letter. This can be edited depending on the output you are getting back.
                 if re.search(r'^[a-zA-Z].*', each_line):
                     intf_name = single_row[0]
                     intf_description = single_row[1]
                     intf_status = single_row[2]
-                    # Instead of printing you can insert into database table or whatever you want here. I am printing just as an example
+                    # Instead of printing you can insert into database table, send it to grafana for graphing or whatever you want here. I am printing just as an example
                     print "On device {} interface name is {} description is {} with status {}".format(hostname, intf_name, intf_description, intf_status)
 
     except paramiko.SSHException, e:
@@ -63,6 +67,7 @@ def cisco_stats_collection(cisco_devices):
         return
 
 
+# Function to take the member in the queue.
 def threader():
     while True:
         # Get a device from the cisco_queue
@@ -73,20 +78,20 @@ def threader():
         cisco_queue.task_done()
 
 
-# Create the queue and threader
+# Create the queue and the threader
 cisco_queue = Queue()
 
 # Record start time of the first job
 start_time = time.time()
 
-# Run 20 jobs in parallel
+# Run jobs in parallel
 for x in range(num_of_parallel_jobs):
     t = threading.Thread(target=threader)
 
-    # classifying as a daemon, so they will die when the main dies
+    # classifying as a daemon, so threads will terminate when the main program terminates
     t.daemon = True
 
-    # begins, must come after daemon definition
+    # start
     t.start()
 
 
