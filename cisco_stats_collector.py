@@ -71,6 +71,9 @@ def threader():
 # Create the queue and threader
 cisco_queue = Queue()
 
+# Record start time of the first job
+start_time = time.time()
+
 # Run 20 jobs in parallel
 for x in range(num_of_parallel_jobs):
     t = threading.Thread(target=threader)
@@ -80,8 +83,6 @@ for x in range(num_of_parallel_jobs):
 
     # begins, must come after daemon definition
     t.start()
-
-start_time = time.time()
 
 
 def main():
