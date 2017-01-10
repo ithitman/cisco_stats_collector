@@ -6,6 +6,7 @@ License     = GPLv3 :: Check included license file for more information
 Author      = "Arwin Reprakash | ITHITMAN"
 Copyright   = "Copyright 2017, Arwin Reprakash"
 Email       = "arwinr@gmail.com"
+Website     = "http://ithitman.com"
 """
 # Importing modules
 import psycopg2
